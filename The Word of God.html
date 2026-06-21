@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Word of God - webBook</title>
+    <meta name="description" content="The Word of God is the sword of the spirit; an immutable law on a cosmic scale.">
+    <style>
+        /* Base Reset & Theme Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.75;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Reading Layout & Content Styling */
+        main {
+            flex: 1;
+            max-width: 750px;
+            width: 100%;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            font-size: 2.4rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin: 2.5rem 0 1rem 0;
+            font-size: 1.6rem;
+            line-height: 1.4;
+            border-bottom: 2px solid #eaeded;
+            padding-bottom: 0.5rem;
+        }
+
+        .reading-view {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Typography & List Layouts */
+        p {
+            margin-bottom: 1.6rem;
+            font-size: 1.15rem;
+            color: #34495e;
+            text-align: justify;
+        }
+
+        ol, ul {
+            margin: 0 0 1.6rem 2rem;
+            color: #34495e;
+            font-size: 1.15rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        /* Callout Box for Scripture Blocks */
+        .scripture-box {
+            background-color: #f0f7fc;
+            border-left: 4px solid var(--accent-color);
+            padding: 1.2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Professional Footer Styling */
+        .site-footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 3rem 2rem 1.5rem 2rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #bdc3c7;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* Viewport Media Queries */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            main {
+                margin: 1.5rem auto;
+                padding: 0 1rem;
+            }
+            .reading-view {
+                padding: 1.5rem;
+                border-radius: 6px;
+            }
+            p {
+                font-size: 1.05rem;
+                text-align: left;
+            }
+            ol, ul {
+                font-size: 1.05rem;
+                margin-left: 1.2rem;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            .footer-col p {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">web<span>Book</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="Content.html">Browse</a></li>
+                <li><a href="#">Library</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Viewport -->
+    <main>
+        <h1>The Word of God</h1>
+        
+        <article class="reading-view">
+            <p>The Word of God is explicitly defined as the sword of the Spirit. In ancient warfare, combatants relied heavily on physical swords—sharp, two-edged metallic weapons engineered meticulously for close-quarters battle. Within our contemporary spiritual landscape, we are empowered to successfully withstand and dismantle the intricate strategies of the devil by actively wielding the sword of the Spirit, which is the spoken and written Word of God.</p>
+
+            <p>To understand the devastating impact of this spiritual weapon, consider the historical era when a catastrophic famine crippled the city of Samaria. This crisis erupted because King Ben-hadad of Syria mobilized his entire military infrastructure to launch a total siege against the city. The resulting economic and agricultural collapse was so profound that a donkey’s head commanded a market price of eighty shekels of silver. </p>
+            
+            <p>As the king of Israel was patrolling the fortified city walls, a woman cried out to him in absolute desperation, saying, “Help, my lord, O king!”</p>
+
+            <p>The king, overwhelmed by the systemic failure around him, replied bitterly, “If the Lord do not help thee, whence shall I help thee? out of the barnfloor, or out of the winepress?” He then inquired, “What aileth thee?”</p>
+
+            <p>The woman revealed a horrific reality of the famine: “This woman said unto me, ‘Give thy son, that we may eat him today, and we will eat my son tomorrow.’ So we boiled my son, and did eat him: and I said unto her on the next day, ‘Give thy son, that we may eat him:’ and she hath hid her son.”</p>
+
+            <p>Upon hearing this account, the king tore his royal garments in profound grief and anger, exposing the humble sackcloth hidden directly against his skin. Discharging his frustration toward God's representative, he declared: “God do so and more also to me, if the head of Elisha the son of Shaphat shall stand on him this day!” With that decree, the king dispatched an enforcement officer to execute the prophet.</p>
+
+            <p>Meanwhile, Elisha was convened in his private quarters with the corporate elders of Israel. Before the executioner arrived, Elisha detailed the unfolding plot to the elders: “See ye how this son of a murderer hath sent to take away mine head? look, when the messenger cometh, shut the door, and hold him fast at the door: is not the sound of his master's feet behind him?” While Elisha was explaining the scenario, the king arrived personally at the scene, declaring in deep despair: “Behold, this evil is of the Lord; what should I wait for the Lord any longer?”</p>
+
+            <p>As preserved in the legal records of 2 Kings 7, Elisha stood and issued a definitive prophetic decree:</p>
+
+            <div class="scripture-box">
+                “Hear ye the word of the Lord; Thus saith the Lord, Tomorrow about this time shall a seah of fine flour be sold for a shekel, and two seahs of barley for a shekel, in the gate of Samaria.”
+            </div>
+
+            <p>A high-ranking military officer, on whose arm the king leaned for physical support, mocked the prophetic statement, saying, “Behold, if the Lord would make windows in heaven, might this thing be?”</p>
+
+            <p>Elisha answered with an unyielding judicial verdict: “Behold, thou shalt see it with thine eyes, but shalt not eat thereof.”</p>
+
+            <h2>How God Fulfills His Word</h2>
+
+            <p>The primary emphasis of this historical account centers on the structural execution of what God spoke, and the precise supernatural mechanisms He deployed to materialize it. The Lord caused the encircling Syrian army to experience a terrifying auditory phenomenon—the overwhelming roar of rushing chariots, galloping horses, and a massive advancing military coalition. </p>
+            
+            <p>Panic-stricken, the Syrian commanders concluded: “Lo, the king of Israel hath hired against us the kings of the Hittites, and the kings of the Egyptians, to come upon us.” Overwhelmed by fear, they abandoned their entire military camp during the twilight hours. They left their tents, horses, and beasts of burden completely intact, fleeing on foot solely to preserve their physical lives.</p>
+
+            <p>Stationed outside the structural perimeter of the city gate were four men suffering from advanced leprosy. Faced with imminent starvation, they made a desperate decision to surrender to the enemy. However, upon reaching the outermost borders of the Syrian camp, they discovered that nobody was there. </p>
+            
+            <p>They entered an abandoned tent, feasted on the provisions, and plundered significant quantities of silver, gold, and fine apparel, hiding their spoils safely. They returned to the camp, entered a secondary tent, and gathered additional wealth to store away privately.</p>
+
+            <p>Eventually, conviction struck them, and they remarked to one another: “We do not well: this day is a day of good tidings, and we hold our peace: if we tarry till the morning light, some mischief will come upon us: now therefore come, that we may go and tell the king's household.” Acting swiftly, they approached the city walls, alerted the gatekeepers, and officially communicated the discovery to the royal palace.</p>
+
+            <h2>The Immutable Law of God</h2>
+
+            <p>The core spiritual truth demonstrated here is that God's Word materialized in perfect alignment with what He articulated through His servant Elisha. Any decree that officially proceeds from the mouth of the Lord transitions immediately into absolute, unbending law.</p>
+
+            <p>To illustrate this using a modern institutional framework, consider the judicial system of Nigeria. The Supreme Court stands as the absolute apex court of the land. Any verdict, final judgment, or constitutional ruling delivered by the Supreme Court instantly becomes binding statutory law and inescapable judicial precedent across the country. </p>
+            
+            <p>This is the exact manner in which God operates, but on a vast, cosmic scale. His spiritual decrees are constant, legally binding, and structurally unshakeable. Heaven and earth may pass away, but His spoken law remains permanently enforced.</p>
+
+            <p>If you can successfully tune your spiritual ears to hear the precise Word of God, you gain the immediate capacity to accomplish feats that appear completely impossible to human intellect. Therefore, apply your utmost diligence to equip yourself thoroughly with the Word of God, deploying it systematically as an elite defensive sword to sever and eliminate anything in your life that fails to align with His design. </p>
+            
+            <p>Maintain an attitude of intense spiritual focus, because God possesses a tailored, strategic word for the specific situation you are confronting right now. Your singular assignment is to hear that word from Him clearly, and execute decisive action based entirely on what He reveals.</p>
+
+            <p>In closing, let us hold fast to the operational instruction delivered by the Apostle Paul in Ephesians 6:18:</p>
+
+            <div class="scripture-box">
+                “Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints.”
+            </div>
+        </article>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Column 1: About the Book -->
+            <div class="footer-col">
+                <h4>About webBook</h4>
+                <p>An immersive, responsive reading ecosystem bringing timeless literature straight to your modern viewport. No zooming, no clutter—just pure text built for your device screen.</p>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home Page</a></li>
+                    <li><a href="Content.html">Table of Contents</a></li>
+                    <li><a href="#">Reader View Settings</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 3: Status / Attribution -->
+            <div class="footer-col">
+                <h4>Publisher Notes</h4>
+                <p>Series: Contending for The Word of God</p>
+                <p style="margin-top: 0.5rem; color: #bdc3c7;">Status: Fully Optimized for Mobile & Desktop</p>
+            </div>
+        </div>
+        
+        <!-- Bottom Copyright Row -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Contending for The Word of God. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

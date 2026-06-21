@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvation - webBook</title>
+    <meta name="description" content="The state of being saved from the power of evil; a divine provision through Jesus Christ.">
+    <style>
+        /* Base Reset & Theme Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.75;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Reading Layout & Content Styling */
+        main {
+            flex: 1;
+            max-width: 750px;
+            width: 100%;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            font-size: 2.4rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin: 2.5rem 0 1rem 0;
+            font-size: 1.6rem;
+            line-height: 1.4;
+            border-bottom: 2px solid #eaeded;
+            padding-bottom: 0.5rem;
+        }
+
+        .reading-view {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Typography & List Layouts */
+        p {
+            margin-bottom: 1.6rem;
+            font-size: 1.15rem;
+            color: #34495e;
+            text-align: justify;
+        }
+
+        ol, ul {
+            margin: 0 0 1.6rem 2rem;
+            color: #34495e;
+            font-size: 1.15rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        /* Callout Box for Scripture Blocks */
+        .scripture-box {
+            background-color: #f0f7fc;
+            border-left: 4px solid var(--accent-color);
+            padding: 1.2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Professional Footer Styling */
+        .site-footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 3rem 2rem 1.5rem 2rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #bdc3c7;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* Viewport Media Queries */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            main {
+                margin: 1.5rem auto;
+                padding: 0 1rem;
+            }
+            .reading-view {
+                padding: 1.5rem;
+                border-radius: 6px;
+            }
+            p {
+                font-size: 1.05rem;
+                text-align: left;
+            }
+            ol, ul {
+                font-size: 1.05rem;
+                margin-left: 1.2rem;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            .footer-col p {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">web<span>Book</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="Content.html">Browse</a></li>
+                <li><a href="#">Library</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Viewport -->
+    <main>
+        <h1>Salvation</h1>
+        
+        <article class="reading-view">
+            <p>Salvation is defined in the Oxford English Dictionary as “the state of being saved from the power of evil.” In a general sense, salvation denotes a comprehensive deliverance from danger, oppression, or any condition that could culminate in absolute disaster.</p>
+
+            <p>However, the baseline of salvation explored in this chapter is the divine rescue operation engineered by God for humanity through our Lord Jesus Christ. This legal and spiritual deliverance was fully actualized through Christ's death and resurrection.</p>
+
+            <h2>The Adamic Fall and the Reign of Death</h2>
+
+            <p>When Adam sinned, his transgression permitted spiritual and physical death to reign over the earth. Man was fundamentally designed by God to experience life everlasting. Because of Adam’s corporate disobedience, humanity forfeited this divine provision of immortality. </p>
+
+            <p>Furthermore, Adam’s rebellion opened the gateway for secondary sins to saturate human behavior. By consuming the fruit from the Tree of Knowledge of Good and Evil, man’s carnal consciousness was prematurely activated. Adam began independently defining good and evil apart from divine counsel. God never intended for humanity to acquire this independent knowledge through rebellion; instead, Adam disobeyed the spoken Word of God and yielded to the deceptive promptings of the serpent, who was acting as an agent of Satan.</p>
+
+            <p>Satan is the foundational father of disobedience and sin. Scriptural history notes that he was cast out of heaven due to his profound pride (Revelation 12). Standing inside the Garden of Eden (Ezekiel 28), he strategically utilized the serpent, capitalizing on the fascination and attention Eve gave to the creature. Satan is, by definition, a master deceiver. </p>
+            
+            <p>Consequently, because all of humanity originated from the loins of Adam, sin entered the world system through one man, and death spread to all men. The inheritance Adam secured for his posterity was a legacy of death. God had warned him clearly that eating of the forbidden tree would result in certain death. As a result of his choice, Adam stripped humanity of its original glory and access to eternal life.</p>
+
+            <h2>The System of Righteousness Through Christ</h2>
+
+            <p>To salvage mankind from this judicial trap, God sent Jesus Christ to pay the absolute penalty for human sin. When God introduced the Law through Moses, human flesh proved incapable of keeping its stringent demands. Jesus came to fulfill every requirement of the Law in physical flesh, eventually carrying the collective sins of the cosmos to the cross. He resurrected on the third day, having fully satisfied every legal requirement for human rescue.</p>
+
+            <p>Through this achievement, Jesus created a functional kingdom system for us. Under this new covenant, whosoever believes in Him is granted eternal life. Within God’s government, no individual is qualified to receive divine inheritance unless they are established in right standing. Therefore, anyone who believes in Jesus is accounted as completely righteous. This eternal life becomes operational the moment a person confesses Jesus Christ as their personal Savior and Lord. As John 1:12 declares:</p>
+
+            <div class="scripture-box">
+                “But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name.”
+            </div>
+
+            <p>God's primary objective is to restore eternal life to humanity. This restoration is accessible exclusively through Jesus Christ. A secondary component of this plan involves equipping God's children to execute His global mandate—introducing humanity to Jesus so that Christ may take up permanent tabernacle in their hearts.</p>
+
+            <h2>Living as Ambassadors of the Kingdom</h2>
+
+            <p>While we continue our earthly assignment, we are commanded to present our physical bodies as a living sacrifice, holy and entirely acceptable to God, which constitutes our reasonable spiritual worship (Romans 12:1). Because our bodies function as the literal temple of the Holy Spirit, maintaining personal holiness is essential to keep our spiritual faculties healthy and alive. </p>
+            
+            <p>This is not a matter of legalistic self-righteousness. Our old, sinful nature was structurally put to death the day we received Christ, who is entirely without sin. Because we have been thoroughly emancipated from the yoke of sin, working in accordance with His will is now an act of free choice. We have been bought with a price; we no longer serve sin, but operate under the reign of righteousness which comes directly from Him.</p>
+
+            <p>Recognizing that you hold citizenship in heaven, the Scripture admonishes us to not be conformed to this world, but to be transformed by the renewing of our minds, that we may prove what is that good, and acceptable, and perfect will of God. You occupy this earth as an official ambassador tasked with executing the King’s will. </p>
+            
+            <p>This assignment requires looking beyond selfish interests. Romans 12:4 establishes that just as a single physical body possesses many members, we also function as distinct components within the mystical body of Christ. There is a specific operational role assigned to you to support the body and assist in bringing salvation to others.</p>
+
+            <p>Every organ within a body has a specialized, distinct function. This is why every born-again believer is expected to actively cooperate in preaching Jesus Christ, leading others to genuine repentance.</p>
+
+            <h2>The Sevenfold Inheritance and Working Out Salvation</h2>
+
+            <p>Through His resurrection, God endowed Jesus Christ with a comprehensive supply of salvation provisions pertaining to life and godliness. Revelation 5:11–12 highlights the magnitude of what Jesus secured on our behalf:</p>
+
+            <div class="scripture-box">
+                “And I beheld, and I heard the voice of many angels round about the throne and the beasts and the elders: and the number of them was ten thousand times ten thousand, and thousands of thousands; Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing.”
+            </div>
+
+            <p>These seven structural pillars reside entirely within Christ. Consequently, anyone who possesses Christ possesses all seven dimensions within their human spirit.</p>
+
+            <p>However, merely knowing about this inheritance does not complete your salvation. True salvation requires an active obedience to scriptural instructions and alignment with God's specific blueprint for your life. As Paul the apostle noted, we must actively put on the whole armor of God, meaning you must actively clothe yourself with salvation. </p>
+            
+            <p>We are instructed to work out our salvation with fear and trembling. While God freely bestows the gift of righteousness to grant us dominion over sin, you will not inherit the kingdom if you continue to sin willfully. The warning in scripture remains absolute:</p>
+
+            <div class="scripture-box">
+                “Be not deceived; God is not mocked: for whatsoever a man soweth, that shall he also reap. For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting.”
+            </div>
+
+            <p>Jesus Christ created an operational system that we must actively engage with. Everything we require is housed inside Him. This functions exactly like a corporate company where you have been formally employed: you must operate strictly according to the rules of the organization, knowing that compliance is what pleases the leadership.</p>
+
+            <p>Christ can be compared to a massive estate containing many specialized rooms. Everything you need is positioned inside these rooms—whether it is power, wealth, wisdom, honor, strength, glory, or blessing. </p>
+            
+            <p>To access these assets, you must first possess the precise spiritual knowledge to identify which room contains the solution to your current problem. Secondly, you must understand the operational protocol required to enter that room and deploy the asset. Simply knowing the location of the room does not solve the crisis; you must actively enter and retrieve what is required.</p>
+
+            <p>Finally, salvation operates as a vital weapon of strategic warfare. In Ephesians 6:17, Paul commands us to take the “helmet of salvation.” Just as a helmet protects a soldier’s head from fatal blows, the reality of salvation safeguards your mind, preserves your life, and shields those placed under your spiritual care.</p>
+        </article>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Column 1: About the Book -->
+            <div class="footer-col">
+                <h4>About webBook</h4>
+                <p>An immersive, responsive reading ecosystem bringing timeless literature straight to your modern viewport. No zooming, no clutter—just pure text built for your device screen.</p>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home Page</a></li>
+                    <li><a href="Content.html">Table of Contents</a></li>
+                    <li><a href="#">Reader View Settings</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 3: Status / Attribution -->
+            <div class="footer-col">
+                <h4>Publisher Notes</h4>
+                <p>Series: Contending for Salvation</p>
+                <p style="margin-top: 0.5rem; color: #bdc3c7;">Status: Fully Optimized for Mobile & Desktop</p>
+            </div>
+        </div>
+        
+        <!-- Bottom Copyright Row -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Contending for Salvation. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
