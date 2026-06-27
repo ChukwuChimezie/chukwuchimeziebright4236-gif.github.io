@@ -45,4 +45,28 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <url>
+    <loc> https://chukwuchimeziebright4236-gif.github.io/operation.html </loc>
+  <changefreq>daily</changefreq>
+  <priority>0.8</priority>
+  </url>
+  
+ <url>
+   <loc> https://chukwuchimeziebright4236-gif.github.io/inec.html </loc>
+   <changefreq>daily</changefreq>
+   <priority>0.8</priority>
+ </url> 
+ 
+ <url>
+   <loc> https://chukwuchimeziebright4236-gif.github.io/political.html </loc>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+ </url>
+ 
+ <url>
+   <loc> https://chukwuchimeziebright4236-gif.github.io/state_police </loc>
+<changefreq>daily</changefreq>
+<priority>0.9</priority>
+ </url>
 </urlset>
