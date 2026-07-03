@@ -34,6 +34,7 @@
             --text-color: #333333;
             --bg-light: #f8f9fa;
             --white: #ffffff;
+            --border-color: #e9ecef;
         }
 
         body {
@@ -74,7 +75,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 15px;
         }
 
         .nav-links a {
@@ -177,7 +178,6 @@
             transform: translateY(-5px);
         }
 
-        /* Cover Image Style for dynamic fitting */
         .book-cover-img {
             width: 100%;
             height: 250px;
@@ -208,12 +208,13 @@
             margin-bottom: 1.5rem;
             color: var(--primary-color);
             font-size: 1.8rem;
+            margin-top: 3rem;
         }
 
         .news-list {
             list-style: none;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 3rem auto;
             padding: 0;
         }
 
@@ -236,6 +237,136 @@
             display: block;
         }
 
+        /* Full News Layout Elements */
+        .featured-stories-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin: 2.5rem 0 1rem 0;
+        }
+
+        .full-news-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .full-news-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            color: #111;
+        }
+
+        .full-news-card p {
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+            color: #444;
+        }
+
+        .smart-link {
+            color: var(--accent-color);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Native Share Tool */
+        .share-box {
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .share-btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .share-action-btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .share-action-btn:hover {
+            background: var(--bg-light);
+        }
+
+        /* Dynamic Feedback Section */
+        .user-feedback-module {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 35px;
+        }
+
+        .feedback-input-wrapper textarea {
+            width: 100%;
+            height: 85px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            resize: vertical;
+            box-sizing: border-box;
+            font-family: inherit;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .feedback-input-wrapper button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 9px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .feedback-input-wrapper button:hover {
+            background-color: #1a252f;
+        }
+
+        .rendered-comments-feed {
+            margin-top: 25px;
+        }
+
+        .individual-comment-block {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .individual-comment-block:last-child {
+            border-bottom: none;
+        }
+
+        .comment-attribution {
+            font-size: 0.82rem;
+            color: #7f8c8d;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
         /* Footer */
         footer {
             background-color: var(--primary-color);
@@ -248,16 +379,9 @@
 
         /* Responsive Breakpoints */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .nav-container { flex-direction: column; gap: 1rem; }
         }
     </style>
 </head>
@@ -307,23 +431,126 @@
 
         <h2 class="news-heading">Latest News</h2>
         <ul class="news-list">
-          <li><a href="Ai.html"> Father of the Internet Warns: AI Faces the Web's 3 Biggest Challenges </a></li>
-          
-         <li><a href="Africa.html"> Nigeria Demands South African Compensation for Abandoned </a></li> 
-          
-          <li><a href="Supreme.html"> Supreme Court Landmark Decisions </a></li>
-          
+            <li><a href="Ai.html"> Father of the Internet Warns: AI Faces the Web's 3 Biggest Challenges </a></li>
+            <li><a href="Africa.html"> Nigeria Demands South African Compensation for Abandoned </a></li> 
+            <li><a href="Supreme.html"> Supreme Court Landmark Decisions </a></li>
             <li><a href="Us-Iran.html">Mixed Signals Over US-Iran Peace Talks in Doha</a></li>
             <li><a href="Venezuela.html">Venezuela Earthquake Death Toll Rises Past 1,700</a></li>
             <li><a href="Cup.html">World Cup Shock: Paraguay Knocks Out Germany</a></li>
             <li><a href="Uk.html">UK Unveils Sweeping New AI-Driven Defense Plan</a></li>
-            
         </ul>
+
+        <!-- EXTENDED NEW FULL STORIES INSERTED HERE -->
+        <div class="featured-stories-container">
+            
+            <h2 class="story-section-title">National & Infrastructure Focus</h2>
+            
+            <!-- Story 1: Superhighway -->
+            <div class="full-news-card">
+                <h3>Tinubu Flags Off Section I of 700km Akwanga–Maiduguri Superhighway</h3>
+                <p>President Bola Tinubu has officially flagged off Section I of the 700-kilometre Akwanga–Maiduguri Superhighway. Formulated to secure strong territorial links between Kaduna, Jos, Bauchi, Gombe, and Biu, this key network expansion shifts internal supply logistics onto a highly modernized blueprint.</p>
+                <p>The state layout explicitly identifies the development framework as an long-term asset designed to protect rural interior commerce channels. Engineering firms and regional trade leads seeking deep analytics on standard mapping vectors can <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">access the logistical overview system here</a> for updated sector briefings.</p>
+            </div>
+
+            <h2 class="story-section-title">Energy & Downstream Markets</h2>
+
+            <!-- Story 2: Dangote Pricing -->
+            <div class="full-news-card">
+                <h3>Dangote Refinery Implements Further ₦50 Petrol Price Reduction</h3>
+                <p>The local downstream energy architecture shifted favorably today as the Dangote Petroleum Refinery implemented a clean ₦50 reduction per litre on its ex-gantry Premium Motor Spirit supply lines.</p>
+                <p>Industrial leads confirmed that processing strategic crude oil stock layers allowed the facility to ease baseline pricing formulas, keeping local product distributed efficiently against competing imports. To check downstream merchant wholesale tracking records and real-time operational data matrices, you can <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">review the energy pricing indexes here</a>.</p>
+            </div>
+
+            <h2 class="story-section-title">Industrial & Solid Mineral Growth</h2>
+
+            <!-- Story 3: Lithium Processing -->
+            <div class="full-news-card">
+                <h3>VP Kashim Shettima Commissions Nigeria's Largest Lithium Processing Facility</h3>
+                <p>Vice President Kashim Shettima has officially commissioned the country's most advanced local lithium processing center, signaling a rigorous policy turn targeting domestic resource value retention.</p>
+                <p>The executive administration reiterated that strict controls are now operational to secure value-added manufacturing states prior to processing international export workflows. For full structural parameters on green metal industrial zones, you can <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">consult the active resources registry here</a>.</p>
+            </div>
+
+            <!-- Integrated Content Utility Tools (Share & Discuss) -->
+            <div class="share-box">
+                <div style="font-weight: 600; font-size: 0.95rem; color: var(--primary-color);">Share these updates with your network:</div>
+                <div class="share-btn-group">
+                    <button class="share-action-btn" onclick="executeShare('twitter')">X / Twitter</button>
+                    <button class="share-action-btn" onclick="executeShare('facebook')">Facebook</button>
+                    <button class="share-action-btn" onclick="executeShare('whatsapp')">WhatsApp</button>
+                    <button class="share-action-btn" onclick="copyCurrentURL()">Copy Page Link</button>
+                </div>
+            </div>
+
+            <div class="user-feedback-module">
+                <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1.15rem; color: var(--primary-color);">Express What You Think</h3>
+                <div class="feedback-input-wrapper">
+                    <textarea id="feedbackText" placeholder="Share your perspective on today's headlines..."></textarea>
+                    <button onclick="commitFeedback()">Submit Comment</button>
+                </div>
+                <div class="rendered-comments-feed" id="feedbackContainer">
+                    <div class="individual-comment-block">
+                        <div class="comment-attribution">Alhassan B. &bull; 24 minutes ago</div>
+                        <div>Processing our lithium locally instead of exporting crude rocks is the best economic decision this year. Excellent strategy.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 webBook Platform. All rights reserved. Read beautifully everywhere.</p>
     </footer>
-      
+
+    <script>
+        // Content Distribution Functions
+        function executeShare(targetMedia) {
+            const pageLocation = encodeURIComponent(window.location.href);
+            const textContext = encodeURIComponent("Check out the latest national and industrial headlines on webBook!");
+            let deepLink = '';
+
+            if (targetMedia === 'twitter') {
+                deepLink = `https://twitter.com/intent/tweet?url=${pageLocation}&text=${textContext}`;
+            } else if (targetMedia === 'facebook') {
+                deepLink = `https://www.facebook.com/sharer/sharer.php?u=${pageLocation}`;
+            } else if (targetMedia === 'whatsapp') {
+                deepLink = `https://api.whatsapp.com/send?text=${textContext}%20${pageLocation}`;
+            }
+
+            if (deepLink) window.open(deepLink, '_blank', 'width=600,height=420');
+        }
+
+        function copyCurrentURL() {
+            navigator.clipboard.writeText(window.location.href);
+            alert("Web page link successfully copied to your clipboard!");
+        }
+
+        // Reader Interaction Management
+        function commitFeedback() {
+            const inputElement = document.getElementById('feedbackText');
+            const targetContainer = document.getElementById('feedbackContainer');
+            
+            if (inputElement.value.trim() === '') {
+                alert('Please provide comment input before submission.');
+                return;
+            }
+
+            const wrapperNode = document.createElement('div');
+            wrapperNode.className = 'individual-comment-block';
+            wrapperNode.innerHTML = `
+                <div class="comment-attribution">Reader Guest &bull; Just now</div>
+                <div>${sanitizeInputStrings(inputElement.value)}</div>
+            `;
+            
+            targetContainer.insertBefore(wrapperNode, targetContainer.firstChild);
+            inputElement.value = '';
+        }
+
+        function sanitizeInputStrings(rawContent) {
+            return rawContent.replace(/[&<>'"]/g, 
+                matchedChar => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[matchedChar] || matchedChar)
+            );
+        }
+    </script>
 </body>
 </html>
