@@ -1,554 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News - Nigeria & Global Headlines</title>
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FC0P9XK86"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-4FC0P9XK86');
     </script>
-      
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>webBook - Reading Reimagined</title>
-    
-    <!-- New Monetag Multitag Script -->
-    <script src="https://quge5.com/88/tag.min.js" data-zone="254998" async data-cfasync="false"></script>
+
+    <!-- Monetag Multitag Script -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="255772" async data-cfasync="false"></script>
 
     <style>
-        a { text-decoration: none; }
-        /* Base Reset & Variables */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
+            --primary-color: #0066cc;
             --text-color: #333333;
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
             --border-color: #e9ecef;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
         }
 
-        /* Header / Navigation */
         header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--accent-color);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.25rem;
             color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #2c3e50 0%, #0f171e 100%);
-            color: var(--white);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .hero-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Feature Highlight / Viewport Pitch */
-        .viewport-banner {
-            background-color: #e8f4fd;
-            border-left: 5px solid var(--accent-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-            text-align: left;
-        }
-
-        .viewport-banner h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 0.8rem 2rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background 0.3s;
         }
 
-        .btn:hover {
-            background-color: #2980b9;
-        }
-
-        /* Book Preview Section */
-        .preview-section {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            color: var(--primary-color);
-        }
-
-        .book-grid {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 4rem;
-        }
-
-        .book-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            width: 100%;
-            max-width: 350px;
-        }
-
-        .book-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .book-cover-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .book-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .book-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .book-author {
+        .home-btn {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
             font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 1rem;
-        }
-
-        /* News List Styling */
-        .news-heading {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-top: 3rem;
-        }
-
-        .news-list {
-            list-style: none;
-            max-width: 600px;
-            margin: 0 auto 3rem auto;
-            padding: 0;
-        }
-
-        .news-list li {
-            background: var(--white);
-            margin-bottom: 10px;
-            padding: 12px 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            transition: background 0.2s;
-        }
-
-        .news-list li:hover {
-            background: #edf2f7;
-        }
-
-        .news-list a {
-            color: var(--accent-color);
             font-weight: 500;
-            display: block;
+            transition: background-color 0.2s;
         }
 
-        /* Full News Layout Elements */
-        .featured-stories-container {
+        .home-btn:hover {
+            background-color: #0052a3;
+        }
+
+        main {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
-        .story-section-title {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            border-left: 4px solid var(--accent-color);
-            padding-left: 10px;
-            margin: 2.5rem 0 1rem 0;
-        }
-
-        .full-news-card {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-
-        .full-news-card h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 1.2rem;
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
             color: #111;
         }
 
-        .full-news-card p {
-            margin-bottom: 14px;
-            font-size: 0.98rem;
-            color: #444;
+        .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: #111;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .news-card h3 {
+            margin-top: 0;
+            font-size: 1.15rem;
+            color: #222;
         }
 
         .smart-link {
-            color: var(--accent-color);
+            color: var(--primary-color);
             text-decoration: underline;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        /* Native Share Tool */
-        .share-box {
-            margin: 30px 0;
+        /* Share Widget */
+        .share-section {
+            margin: 40px 0;
             padding: 20px 0;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
 
-        .share-btn-group {
+        .share-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .share-buttons {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            margin-top: 10px;
         }
 
-        .share-action-btn {
+        .share-btn {
             padding: 8px 16px;
             border-radius: 4px;
             border: 1px solid var(--border-color);
-            background: var(--white);
+            background: var(--card-bg);
             cursor: pointer;
-            font-size: 0.88rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             transition: background 0.2s;
         }
 
-        .share-action-btn:hover {
-            background: var(--bg-light);
+        .share-btn:hover {
+            background: var(--border-color);
         }
 
-        /* Dynamic Feedback Section */
-        .user-feedback-module {
-            background: var(--white);
+        /* Comments Section */
+        .comments-section {
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 25px;
-            margin-top: 35px;
+            margin-top: 40px;
         }
 
-        .feedback-input-wrapper textarea {
+        .comment-form textarea {
             width: 100%;
-            height: 85px;
-            padding: 12px;
+            height: 80px;
+            padding: 10px;
             border: 1px solid var(--border-color);
             border-radius: 4px;
             resize: vertical;
             box-sizing: border-box;
             font-family: inherit;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            margin-bottom: 10px;
         }
 
-        .feedback-input-wrapper button {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .comment-form button {
+            background-color: #333;
+            color: white;
             border: none;
-            padding: 9px 18px;
+            padding: 8px 16px;
             border-radius: 4px;
             cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s;
+            font-weight: 500;
         }
 
-        .feedback-input-wrapper button:hover {
-            background-color: #1a252f;
+        .comment-form button:hover {
+            background-color: #444;
         }
 
-        .rendered-comments-feed {
+        .comments-list {
             margin-top: 25px;
         }
 
-        .individual-comment-block {
+        .comment {
             border-bottom: 1px solid var(--border-color);
             padding: 15px 0;
         }
 
-        .individual-comment-block:last-child {
+        .comment:last-child {
             border-bottom: none;
         }
 
-        .comment-attribution {
-            font-size: 0.82rem;
-            color: #7f8c8d;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            .nav-container { flex-direction: column; gap: 1rem; }
+        .comment-meta {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <nav class="nav-container">
-            <a href="https://chukwuchimeziebright4236-gif.github.io/" class="logo">web<span>Book</span></a>
-            <ul class="nav-links">
-                <li><a href="https://chukwuchimeziebright4236-gif.github.io/">Home</a></li>
-                <li><a href="https://chukwuchimeziebright4236-gif.github.io/">Browse</a></li>
-                <li><a href="https://chukwuchimeziebright4236-gif.github.io/">Library</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <a href="https://chukwuchimeziebright4236-gif.github.io/" class="logo">DailyDigest</a>
+            <a href="https://chukwuchimeziebright4236-gif.github.io/" class="home-btn">Home Navigation</a>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-container">
-            <h1>Books Built for Your Screen</h1>
-            <p>Welcome to the ultimate digital reading ecosystem. No heavy PDFs, no pinching-to-zoom, and no awkward formatting.</p>
-            
-            <div class="viewport-banner">
-                <h3>📱 Optimized for Your Viewport</h3>
-                <p style="color: #2c3e50; font-size: 1rem;">
-                    Every single book on this platform is crafted to melt perfectly into your screen. Whether you are on a smartphone, tablet, or desktop, the text flows dynamically to match your exact <strong>viewport dimensions</strong> for a pixel-perfect, distraction-free reading layout.
-                </p>
-            </div>
+    <main>
+        <h1>Latest Global & National Headlines</h1>
+        <div class="date">Friday, July 3, 2026</div>
 
-            <a href="contents.html" class="btn">Start Reading Now</a>
-        </div>
-    </section>
-
-    <main class="preview-section">
-        <h2 class="section-title">Trending webBooks</h2>
+        <!-- ORIGINAL NEWS FEED EXAMPLES -->
+        <h2 class="section-title">Latest News</h2>
         
-        <div class="book-grid">
-            <!-- Contending For Dominion Card (Kept) -->
-            <div class="book-card">
-                <img src="weapons.jpg" alt="Contending For Dominion Cover" class="book-cover-img">
-                <div class="book-info">
-                    <h3 class="book-title">Contending For Dominion</h3>
-                    <p class="book-author">By Chukwu Chimezie</p>
-                    <a href="contents.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Open Book</a>
-                </div>
+        <div class="news-card">
+            <h3>Power Sector: "Power Force" Initiative Targets 5,000 Youths</h3>
+            <p>The Presidency has launched a new national project named "Power Force" to train 5,000 young Nigerians in technical operations. The enterprise focuses directly on accelerating the rollout of smart electricity meters nationwide while simultaneously creating viable job channels in the evolving energy architecture.</p>
+        </div>
+
+        <div class="news-card">
+            <h3>Finance: SNEPCo and Local Banks Launch $3-Billion Contract Facility</h3>
+            <p>Shell Nigeria Exploration and Production Company (SNEPCo), alongside nine prominent commercial banking institutions, unveiled a massive $3-billion Contract Finance Facility. The framework gives domestic oil and gas contractors straightforward access to capital, heavily supporting native deepwater operations.</p>
+        </div>
+
+        <div class="news-card">
+            <h3>Security: US Transitions Operations in Lake Chad Basin</h3>
+            <p>The United States military has executed a planned transition of its counterterrorism assets from the Lake Chad Basin. US Air Forces Europe-Africa confirmed that following localized operations against regional insurgent networks, personnel are drawing down, though strong intelligence partnerships remain active at Nigeria's request.</p>
+        </div>
+
+
+        <!-- ADDED SEPARATE COPIES UNDER THE LATEST NEWS -->
+        <h2 class="section-title">Featured Full Stories</h2>
+
+        <!-- Story 1: Akwanga–Maiduguri Superhighway -->
+        <div class="news-card">
+            <h3>Infrastructure: Akwanga–Maiduguri 700km Superhighway Section I Flagged Off</h3>
+            <p>In a major boost to Nigeria's infrastructural landscape, President Bola Tinubu has officially flagged off Section I of the highly anticipated 700-kilometre Akwanga–Maiduguri Superhighway.</p>
+            <p>The monumental project is strategically designed to establish seamless regional connectivity, directly linking key northern socio-economic hubs including Akwanga, Kaduna, Jos, Bauchi, Gombe, and Biu. According to initial state briefings, the superhighway is engineered to revitalize interior supply lines, compress logistics lead times, and upgrade commercial transport safety corridors.</p>
+            <p>The presidency noted that this framework acts as a foundational structural driver for long-term interior agricultural commerce. Stakeholders wishing to review structural mapping resources and alignment corridors can <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">access the logistics overview portal here</a> for extended project documentation.</p>
+        </div>
+
+        <!-- Story 2: Dangote Refinery -->
+        <div class="news-card">
+            <h3>Energy Pricing: Dangote Refinery Implements Further ₦50 Petrol Price Reduction</h3>
+            <p>The downstream oil sector experienced positive movement today as the Dangote Petroleum Refinery formally slashed its ex-gantry Premium Motor Spirit (PMS) price by an additional ₦50 per litre.</p>
+            <p>Refinery management verified that tactical cost buffers, coupled with processing older crude oil stock layers, enabled them to lower domestic fuel pricing parameters. The price cut aims to offer relief to local markets navigating retail competition with private product importers.</p>
+            <p>Industry analysts indicate that this shift will likely trigger parallel cost realignments across filling stations nationwide. To view the updated daily wholesale margins and pricing charts, you may <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">review the live energy index here</a> for comparative tracking.</p>
+        </div>
+
+        <!-- Story 3: Lithium Processing Plant -->
+        <div class="news-card">
+            <h3>Solid Minerals: VP Kashim Shettima Commissions Nigeria's Largest Lithium Processing Plant</h3>
+            <p>Vice President Kashim Shettima has officially inaugurated Nigeria's largest lithium processing plant, setting a historic turning point for the country's solid minerals sector.</p>
+            <p>During the opening event, the Vice President emphasized the administration's policy pivot strictly preventing raw mineral exploitation without adequate domestic processing. The facility is expected to add tremendous structural value to locally sourced raw lithium before any global export procedures take place.</p>
+            <p>This initiative plans to position the country firmly within the global clean energy battery supply ecosystem. For details on foreign investment frameworks and processing parameters, you can <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">review the mineral extraction registry data here</a>.</p>
+        </div>
+
+
+        <!-- Share Section -->
+        <div class="share-section">
+            <div class="share-title">Share this news update:</div>
+            <div class="share-buttons">
+                <button class="share-btn" onclick="sharePage('twitter')">X / Twitter</button>
+                <button class="share-btn" onclick="sharePage('facebook')">Facebook</button>
+                <button class="share-btn" onclick="sharePage('whatsapp')">WhatsApp</button>
+                <button class="share-btn" onclick="copyLink()">Copy Link</button>
             </div>
         </div>
 
-        <h2 class="news-heading">Latest News</h2>
-        <ul class="news-list">
-            <li><a href="Ai.html"> Father of the Internet Warns: AI Faces the Web's 3 Biggest Challenges </a></li>
-            <li><a href="Africa.html"> Nigeria Demands South African Compensation for Abandoned </a></li> 
-            <li><a href="Supreme.html"> Supreme Court Landmark Decisions </a></li>
-            <li><a href="Us-Iran.html">Mixed Signals Over US-Iran Peace Talks in Doha</a></li>
-            <li><a href="Venezuela.html">Venezuela Earthquake Death Toll Rises Past 1,700</a></li>
-            <li><a href="Cup.html">World Cup Shock: Paraguay Knocks Out Germany</a></li>
-            <li><a href="Uk.html">UK Unveils Sweeping New AI-Driven Defense Plan</a></li>
-        </ul>
-
-        <!-- EXTENDED NEW FULL STORIES INSERTED HERE -->
-        <div class="featured-stories-container">
-            
-            <h2 class="story-section-title">National & Infrastructure Focus</h2>
-            
-            <!-- Story 1: Superhighway -->
-            <div class="full-news-card">
-                <h3>Tinubu Flags Off Section I of 700km Akwanga–Maiduguri Superhighway</h3>
-                <p>President Bola Tinubu has officially flagged off Section I of the 700-kilometre Akwanga–Maiduguri Superhighway. Formulated to secure strong territorial links between Kaduna, Jos, Bauchi, Gombe, and Biu, this key network expansion shifts internal supply logistics onto a highly modernized blueprint.</p>
-                <p>The state layout explicitly identifies the development framework as an long-term asset designed to protect rural interior commerce channels. Engineering firms and regional trade leads seeking deep analytics on standard mapping vectors can <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">access the logistical overview system here</a> for updated sector briefings.</p>
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <h3 style="margin-top: 0;">Reader Comments</h3>
+            <div class="comment-form">
+                <textarea id="commentInput" placeholder="Express what you think about today's headlines..."></textarea>
+                <button onclick="postComment()">Submit Comment</button>
             </div>
-
-            <h2 class="story-section-title">Energy & Downstream Markets</h2>
-
-            <!-- Story 2: Dangote Pricing -->
-            <div class="full-news-card">
-                <h3>Dangote Refinery Implements Further ₦50 Petrol Price Reduction</h3>
-                <p>The local downstream energy architecture shifted favorably today as the Dangote Petroleum Refinery implemented a clean ₦50 reduction per litre on its ex-gantry Premium Motor Spirit supply lines.</p>
-                <p>Industrial leads confirmed that processing strategic crude oil stock layers allowed the facility to ease baseline pricing formulas, keeping local product distributed efficiently against competing imports. To check downstream merchant wholesale tracking records and real-time operational data matrices, you can <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">review the energy pricing indexes here</a>.</p>
-            </div>
-
-            <h2 class="story-section-title">Industrial & Solid Mineral Growth</h2>
-
-            <!-- Story 3: Lithium Processing -->
-            <div class="full-news-card">
-                <h3>VP Kashim Shettima Commissions Nigeria's Largest Lithium Processing Facility</h3>
-                <p>Vice President Kashim Shettima has officially commissioned the country's most advanced local lithium processing center, signaling a rigorous policy turn targeting domestic resource value retention.</p>
-                <p>The executive administration reiterated that strict controls are now operational to secure value-added manufacturing states prior to processing international export workflows. For full structural parameters on green metal industrial zones, you can <a href="https://omg10.com/4/9300114" class="smart-link" target="_blank" rel="noopener">consult the active resources registry here</a>.</p>
-            </div>
-
-            <!-- Integrated Content Utility Tools (Share & Discuss) -->
-            <div class="share-box">
-                <div style="font-weight: 600; font-size: 0.95rem; color: var(--primary-color);">Share these updates with your network:</div>
-                <div class="share-btn-group">
-                    <button class="share-action-btn" onclick="executeShare('twitter')">X / Twitter</button>
-                    <button class="share-action-btn" onclick="executeShare('facebook')">Facebook</button>
-                    <button class="share-action-btn" onclick="executeShare('whatsapp')">WhatsApp</button>
-                    <button class="share-action-btn" onclick="copyCurrentURL()">Copy Page Link</button>
+            <div class="comments-list" id="commentsContainer">
+                <div class="comment">
+                    <div class="comment-meta">Tunde A. • 10 minutes ago</div>
+                    <div>Great progress on the Lithium processing plant. Local manufacturing is exactly what we need to build sustainable industry.</div>
                 </div>
             </div>
-
-            <div class="user-feedback-module">
-                <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1.15rem; color: var(--primary-color);">Express What You Think</h3>
-                <div class="feedback-input-wrapper">
-                    <textarea id="feedbackText" placeholder="Share your perspective on today's headlines..."></textarea>
-                    <button onclick="commitFeedback()">Submit Comment</button>
-                </div>
-                <div class="rendered-comments-feed" id="feedbackContainer">
-                    <div class="individual-comment-block">
-                        <div class="comment-attribution">Alhassan B. &bull; 24 minutes ago</div>
-                        <div>Processing our lithium locally instead of exporting crude rocks is the best economic decision this year. Excellent strategy.</div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 webBook Platform. All rights reserved. Read beautifully everywhere.</p>
-    </footer>
-
     <script>
-        // Content Distribution Functions
-        function executeShare(targetMedia) {
-            const pageLocation = encodeURIComponent(window.location.href);
-            const textContext = encodeURIComponent("Check out the latest national and industrial headlines on webBook!");
-            let deepLink = '';
+        // Native Social Sharing Logic
+        function sharePage(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent("Check out today's top headlines on DailyDigest!");
+            let shareUrl = '';
 
-            if (targetMedia === 'twitter') {
-                deepLink = `https://twitter.com/intent/tweet?url=${pageLocation}&text=${textContext}`;
-            } else if (targetMedia === 'facebook') {
-                deepLink = `https://www.facebook.com/sharer/sharer.php?u=${pageLocation}`;
-            } else if (targetMedia === 'whatsapp') {
-                deepLink = `https://api.whatsapp.com/send?text=${textContext}%20${pageLocation}`;
+            if (platform === 'twitter') {
+                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+            } else if (platform === 'facebook') {
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            } else if (platform === 'whatsapp') {
+                shareUrl = `https://api.whatsapp.com/send?text=${text}%20${url}`;
             }
 
-            if (deepLink) window.open(deepLink, '_blank', 'width=600,height=420');
+            if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
         }
 
-        function copyCurrentURL() {
+        function copyLink() {
             navigator.clipboard.writeText(window.location.href);
-            alert("Web page link successfully copied to your clipboard!");
+            alert("Page link copied to clipboard!");
         }
 
-        // Reader Interaction Management
-        function commitFeedback() {
-            const inputElement = document.getElementById('feedbackText');
-            const targetContainer = document.getElementById('feedbackContainer');
+        // Front-end Functional Comment Posting Logic
+        function postComment() {
+            const textarea = document.getElementById('commentInput');
+            const container = document.getElementById('commentsContainer');
             
-            if (inputElement.value.trim() === '') {
-                alert('Please provide comment input before submission.');
+            if (textarea.value.trim() === '') {
+                alert('Please type a comment before submitting.');
                 return;
             }
 
-            const wrapperNode = document.createElement('div');
-            wrapperNode.className = 'individual-comment-block';
-            wrapperNode.innerHTML = `
-                <div class="comment-attribution">Reader Guest &bull; Just now</div>
-                <div>${sanitizeInputStrings(inputElement.value)}</div>
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.innerHTML = `
+                <div class="comment-meta">Guest User • Just now</div>
+                <div>${escapeHTML(textarea.value)}</div>
             `;
             
-            targetContainer.insertBefore(wrapperNode, targetContainer.firstChild);
-            inputElement.value = '';
+            container.insertBefore(commentDiv, container.firstChild);
+            textarea.value = '';
         }
 
-        function sanitizeInputStrings(rawContent) {
-            return rawContent.replace(/[&<>'"]/g, 
-                matchedChar => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[matchedChar] || matchedChar)
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, 
+                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
             );
         }
     </script>
