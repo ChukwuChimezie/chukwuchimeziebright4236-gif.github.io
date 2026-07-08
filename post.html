@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FC0P9XK86"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Post...</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #333; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #666; text-decoration: none; }
+        .date { color: #666; font-style: italic; margin-bottom: 20px; }
+        
+        /* Monetization Box Styling */
+        .monetize-box { 
+            margin-top: 40px; 
+            padding: 20px; 
+            background-color: #f9f9f9; 
+            border-left: 4px solid #0066cc; 
+            border-radius: 4px;
+        }
+        .monetize-btn {
+            display: inline-block;
+            margin-top: 12px;
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .monetize-btn:hover { background-color: #0052a3; }
+        .disclaimer { font-size: 0.8rem; color: #888; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+    <h1 id="post-title">Loading...</h1>
+    <div id="post-date" class="date"></div>
+    <div id="post-content"></div>
+    
+    <!-- This container holds our dynamic referral link -->
+    <div id="referral-container"></div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+
+        fetch('posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const matchedPost = posts.find(p => p.id === postId);
+
+                if (matchedPost) {
+                    document.title = matchedPost.title;
+                    document.getElementById('post-title').innerText = matchedPost.title;
+                    document.getElementById('post-date').innerText = matchedPost.date;
+                    document.getElementById('post-content').innerHTML = matchedPost.content;
+
+                    // MONETIZATION LOGIC: Check if the post has a referral link
+                    if (matchedPost.referralLink && matchedPost.referralLabel) {
+                        const refContainer = document.getElementById('referral-container');
+                        refContainer.innerHTML = `
+                            <div class="monetize-box">
+                                <h3>Support This Blog</h3>
+                                <p>${matchedPost.referralLabel}</p>
+                                <a href="${matchedPost.referralLink}" target="_blank" rel="noopener noreferrer" class="monetize-btn">Check It Out →</a>
+                                <p class="disclaimer">*Affiliate link: If you make a purchase through this link, I may earn a small commission at no extra cost to you.</p>
+                            </div>
+                        `;
+                    }
+                } else {
+                    document.getElementById('post-content').innerText = "Post not found.";
+                }
+            })
+            .catch(err => console.error("Error displaying post:", err));
+    </script>
+</body>
+</html>
