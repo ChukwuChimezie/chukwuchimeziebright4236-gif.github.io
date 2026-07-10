@@ -1,244 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FC0P9XK86"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Tech Policy & Workforce Crisis - Political News</title>
+    <title>TechPulse | Latest Tech News & Blogs</title>
     <style>
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            background-color: #fafafa;
-            color: #222;
+    a{ text-decoration: none;
+    }
+        /* Reset & Base Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        nav {
-            background-color: #111;
-            padding: 15px;
-            text-align: center;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f6f9;
         }
-        nav a {
-            color: #fff;
+        a {
             text-decoration: none;
+            color: #0073e6;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #111;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
             font-weight: bold;
-            margin: 0 15px;
-            font-size: 1rem;
+            color: #0073e6;
         }
-        nav a:hover {
-            color: #00adb5;
+        .logo span {
+            color: #fff;
         }
-        .news-container {
-            max-width: 750px;
-            margin: 30px auto;
-            background: #ffffff;
-            padding: 40px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
         }
-        .category {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #d32f2f;
+        .nav-links a {
+            color: #ccc;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* Main Layout Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 900px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        /* Hero / Featured Post */
+        .featured-post {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .featured-img {
+            width: 100%;
+            height: 400px;
+            background: #ddd center/cover no-repeat;
+        }
+        .featured-content {
+            padding: 1.5rem;
+        }
+        .category-tag {
+            display: inline-block;
+            background: #0073e6;
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
-        h1 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-top: 0;
+        .featured-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
             color: #111;
         }
-        .author-date {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        .meta-info {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        /* News Grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 600px) {
+            .news-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .card-img {
+            height: 200px;
+            background: #eee center/cover no-repeat;
+        }
+        .card-content {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .card-content h3 {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            color: #111;
+        }
+        .card-content p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .widget {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .widget h3 {
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .trending-list li {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        .trending-list li:last-child {
+            border: none;
+        }
+        .trending-list a {
+            font-weight: 500;
+            color: #222;
+        }
+        .trending-list a:hover {
+            color: #0073e6;
+        }
+
+        /* Refer & Earn Custom Banner Styling */
+        .referral-banner {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid #334155;
+        }
+        .referral-banner h4 {
+            color: #38bdf8;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .referral-banner p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 1.2rem;
+        }
+        .referral-btn {
+            display: inline-block;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 0.6rem 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .referral-btn:hover {
+            background: #0ea5e9;
+            color: #fff;
+        }
+
+        /* Inline Horizontal Referral Banner */
+        .inline-referral {
+            background: #ffffff;
+            border-left: 5px solid #10b981;
+            padding: 1.2rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        @media (min-width: 600px) {
+            .inline-referral {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        .inline-referral-text h4 {
+            color: #10b981;
+            margin-bottom: 0.2rem;
+        }
+        .inline-referral-text p {
             font-size: 0.9rem;
             color: #666;
-            border-bottom: 1px solid #eaeaea;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
         }
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 22px;
-            color: #333;
-        }
-        .lead-paragraph {
-            font-size: 1.25rem;
-            line-height: 1.5;
-            color: #111;
-            font-weight: 500;
-        }
-        /* Cleva Banner Advertisement Styling */
-        .ad-banner-box {
-            margin: 40px 0;
-            text-align: center;
-        }
-        .ad-banner-link {
-            display: inline-block;
-            text-decoration: none;
-            transition: transform 0.2s ease-in-out;
-        }
-        .ad-banner-link:hover {
-            transform: scale(1.01);
-        }
-        .ad-banner-img {
-            max-width: 100%;
-            height: auto;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-            display: block;
+        .inline-btn {
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
             border-radius: 4px;
+            font-weight: bold;
+            white-space: nowrap;
         }
-        /* Comment Section Styling */
-        .comment-section {
-            margin-top: 50px;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            border-top: 2px solid #111;
-            padding-top: 30px;
-        }
-        .comment-section h3 {
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-        .comment-form input, .comment-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        .comment-form textarea {
-            height: 100px;
-            resize: vertical;
-        }
-        .comment-form button {
-            background-color: #111;
+        .inline-btn:hover {
+            background: #059669;
             color: #fff;
-            border: none;
-            padding: 12px 24px;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.2s;
         }
-        .comment-form button:hover {
-            background-color: #333;
-        }
-        .comments-list {
-            margin-top: 30px;
-        }
-        .comment-card {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            border-left: 4px solid #00adb5;
-        }
-        .comment-card .author {
-            font-weight: bold;
-            color: #111;
-            margin-bottom: 5px;
-            font-size: 0.95rem;
-        }
-        .comment-card .text {
-            color: #444;
-            margin: 0;
-            font-size: 1rem;
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-<!-- NAVIGATION BAR -->
-<nav>
-    <a href="index.html">Home (Politics)</a>
-    <a href="tech.html">Tech News</a>
-</nav>
+    <!-- Header / Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Tech<span>Pulse</span></div>
+             </div>
+    </header>
 
-<div class="news-container">
-    <div class="category">Politics &amp; Technology</div>
-    
-    <h1>The Sovereign Silicon Race: Why Governments Are Scrambling to Regulate the Tech Stack</h1>
-    
-    <div class="author-date">By Political Desk • International Policy Report</div>
-    
-    <p class="lead-paragraph">As global superpowers clash over digital infrastructure, technology has officially transcended commercial markets to become the ultimate instrument of geopolitical leverage and national security.</p>
-    
-    <p>Behind closed doors, policymakers are quietly shifting from basic antitrust debates to aggressive "cyber sovereignty" initiatives. The friction between rapid innovation and government oversight has reached a critical boiling point, as nations scramble to deploy legal frameworks around data centers, autonomous network defense, and advanced computing power. For modern governments, controlling the domestic tech ecosystem is no longer just a regulatory preference—it is a matter of state survival.</p>
+    <!-- Main Content Area -->
+    <div class="container">
+        
+        <!-- Left Column: News Articles -->
+        <main>
+            <!-- Top Featured Story -->
+            <article class="featured-post">
+                <div class="featured-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="featured-content">
+                    <span class="category-tag"> <a href="automation.html">Artificial Intelligence</span>
+                    <h2>The Future of Web Development: How AI Tools are Changing the Code Landscape</a> </h2>
+                    <div class="meta-info">Published on July 10, 2026 • By Admin</div>
+                    <p><a href="automation.html">Artificial intelligence is shifting from a luxury feature to an absolute necessity in modern web properties. In this deep dive, we explore how automation, predictive layouts, and automated scripts are altering how self-taught developers build their systems... </a> </p>
+                    <a href="automation.html" style="font-weight: bold; display: inline-block; margin-top: 1rem;">Read Full Story &rarr;</a>
+                </div>
+            </article>
 
-    <p>This escalating political climate has placed an intense spotlight on international relations, forcing state administrations to methodically review structural safety, data privacy, and digital infrastructure resilience. Trade policies are actively being weaponized to protect sovereign networks against cross-border algorithmic vulnerabilities. Amidst this global gridlock, government officials face mounting domestic pressure to build local, bulletproof workforces capable of defending critical national infrastructure.</p>
-
-    <!-- START OF YOUR LINKED CLEVA BANNER -->
-    <div class="ad-banner-box">
-        <a href="https://app.getcleva.com/refer/CHUK6191" target="_blank" rel="noopener noreferrer" class="ad-banner-link">
-            <!-- Save your Cleva banner image as 'cleva-banner.jpeg' in your GitHub repository folder -->
-            <img src="cleva-banner.jpeg" alt="Get Paid Globally in USD - Open a Cleva US Dollar Account" class="ad-banner-img">
-        </a>
-    </div>
-    <!-- END OF YOUR LINKED CLEVA BANNER -->
-
-    <p>The geopolitical reality is stark: as lawmakers debate regulations in parliament, the severe lack of local technological talent remains their biggest vulnerability. Cybersecurity, data orchestration, and digital platform architecture are the real battlegrounds of modern influence, making specialized technical expertise an incredibly valuable global currency.</p>
-
-    <p>As the divide between tech-centric economies and legacy systems widens, the global remote workforce is experiencing unprecedented disruption. For professionals navigating this new era, transitioning to global roles allows them to bypass shifting local policies and tap directly into global tech markets, earning premium international currencies like US Dollars from the comfort of their homes.</p>
-    
-    <p>Survival in this changing landscape requires an urgent pivot toward highly specialized, high-demand skills that cannot be phased out by shifting policy or international borders.</p>
-
-    <!-- COMMENT SECTION -->
-    <div class="comment-section">
-        <h3>Join the Discussion</h3>
-        <form class="comment-form" id="commentForm">
-            <input type="text" id="commentName" placeholder="Your Name" required>
-            <textarea id="commentText" placeholder="Share your thoughts on this article..." required></textarea>
-            <button type="submit">Post Comment</button>
-        </form>
-
-        <div class="comments-list" id="commentsList">
-            <!-- Default placeholder comments -->
-            <div class="comment-card">
-                <div class="author">Chidi K.</div>
-                <div class="text">Excellent write-up. The shift towards sovereign tech infrastructure is very real, especially when you look at data localization policies being implemented across Africa right now.</div>
+            <!-- Inline Referral Banner Slot (e.g., Finance, Wallet, or Hosting Referral) -->
+            <div class="inline-referral" style="margin-bottom: 2rem;">
+                <div class="inline-referral-text">
+                    <img src="download-30.jpg">
+                </div>
+                <!-- Swap # with your actual affiliate/referral link -->
+                <a href="https://app.getcleva.com/refer/CHUK6191 " target="_blank" class="inline-btn">Sign Up</a>
             </div>
-        </div>
-    </div>
-</div>
 
-<script>
-    // JavaScript to handle live comments on GitHub Pages
-    document.getElementById('commentForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const nameInput = document.getElementById('commentName');
-        const textInput = document.getElementById('commentText');
-        const commentsList = document.getElementById('commentsList');
-        
-        // Create comment card structures
-        const commentCard = document.createElement('div');
-        commentCard.className = 'comment-card';
-        
-        const authorDiv = document.createElement('div');
-        authorDiv.className = 'author';
-        authorDiv.textContent = nameInput.value;
-        
-        const textP = document.createElement('p');
-        textP.className = 'text';
-        textP.textContent = textInput.value;
-        
-        // Append elements
-        commentCard.appendChild(authorDiv);
-        commentCard.appendChild(textP);
-        commentsList.insertBefore(commentCard, commentsList.firstChild);
-        
-        // Reset form inputs
-        nameInput.value = '';
-        textInput.value = '';
-    });
-</script>
+            <!-- News Grid for Latest Posts -->
+            <section class="news-grid">
+                
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="card-content">
+                        <span class="category-tag" style="background: #28a745;">Web Dev</span>
+                        <h3>Mastering CSS Grid and Flexbox for Layouts</h3>
+                        <div class="meta-info">July 9, 2026</div>
+                        <p>Building clean, responsive grid systems doesn't require massive frameworks. Learn how to leverage raw CSS properties efficiently.</p>
+                        <a href="optimize.html">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="card-content">
+                        <span class="category-tag" style="background: #dc3545;">Cybersecurity</span>
+                        <h3>Why Staying Secure Matters for Small Blogs</h3>
+                        <div class="meta-info">July 8, 2026</div>
+                        <p>From simple SSL setups to basic database configuration protection, learn how to secure your custom web projects easily.</p>
+                        <a href="cross.html">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="card-content">
+                        <span class="category-tag" style="background: #ffc107; color: #333;">Gadgets</span>
+                        <h3>Top Tech Tools Every Developer Needs in 2026</h3>
+                        <div class="meta-info">July 7, 2026</div>
+                        <p>A round-up of the best hardware accessories, setups, and productivity extensions turning heads this quarter.</p>
+                        <a href="logs.html">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80');"></div>
+                    <div class="card-content">
+                        <span class="category-tag" style="background: #17a2b8;">Software</span>
+                        <h3>The Rise of Serverless Hosting Architecture</h3>
+                        <div class="meta-info">July 6, 2026</div>
+                        <p>Static sites and serverless functions are dominating. Here is why lightweight hosting platforms are winning the race.</p>
+                        <a href="#">Read More &rarr;</a>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+
+        <!-- Right Column: Sidebar -->
+        <aside>
+            <!-- Sidebar Dark Mode Styled Referral Banner (e.g., VPN Referral) -->
+            <div class="referral-banner">
+                <h4>Secure Your Network</h4>
+                <p>Get up to 60% off premium security plans and protect your data across all your tech projects.</p>
+                <!-- Swap # with your actual affiliate/referral link -->
+                <a href="#" target="_blank" class="referral-btn">Get Secured Now</a>
+            </div>
+
+            <!-- Trending Widget -->
+            <div class="widget">
+                <h3>Trending News</h3>
+                <ul class="trending-list">
+                    <li>
+                        <a href="#">New optimization rules to boost site indexing rates</a>
+                    </li>
+                    <li>
+                        <a href="#">How referral networks are changing content monetization</a>
+                    </li>
+                    <li>
+                        <a href="#">The transition to clean coding habits for independent projects</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- About / Newsletter Widget -->
+            <div class="widget">
+                <h3>Connect With Us</h3>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 1rem;">Stay updated with our latest web development tutorials and breakthrough tech reviews.</p>
+                <a href="#" style="display: block; text-align: center; background: #111; color: #fff; padding: 0.5rem; border-radius: 4px; font-weight: bold;">Follow our Community</a>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 TechPulse. All Rights Reserved. Hosted via GitHub Pages.</p>
+    </footer>
 
 </body>
 </html>
