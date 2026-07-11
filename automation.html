@@ -41,9 +41,70 @@
 
         <!-- Cleva Referral Banner Placement -->
         <a href="https://app.getcleva.com/refer/CHUK6191" target="_blank" rel="noopener noreferrer" class="banner" style="max-width: 400px; margin: 2rem auto;" title="Get Paid Globally in USD with Cleva">
-            <img src="goTech.png" alt="Cleva Referral Banner">
+            <img src="cleva.jpg" alt="Cleva Referral Banner">
         </a>
     </div>
+    
+        <!-- Comments Section -->
+        <section class="comment-section">
+            <h3>Discussion & Comments</h3>
+            <form id="commentForm" class="comment-form">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                <textarea id="commentText" placeholder="Write your comment here..." required></textarea>
+                <button type="submit" class="submit-btn">Post Comment</button>
+            </form>
+            <div id="commentsList" class="comments-list"></div>
+        </section>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'comments_' + window.location.pathname;
+        const form = document.getElementById('commentForm');
+        const commentsList = document.getElementById('commentsList');
+
+        function loadComments() {
+            commentsList.innerHTML = '';
+            const storedComments = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            if (storedComments.length === 0) {
+                commentsList.innerHTML = '<p class="no-comments">No comments yet. Be the first to share your thoughts!</p>';
+                return;
+            }
+            storedComments.forEach(comment => {
+                const commentItem = document.createElement('div');
+                commentItem.className = 'comment-item';
+                commentItem.innerHTML = `
+                    <div class="comment-header">
+                        <span class="comment-author">${escapeHTML(comment.name)}</span>
+                        <span class="comment-date">${comment.date}</span>
+                    </div>
+                    <div class="comment-text">${escapeHTML(comment.text)}</div>
+                `;
+                commentsList.appendChild(commentItem);
+            });
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('userName');
+            const textInput = document.getElementById('commentText');
+            const newComment = {
+                name: nameInput.value.trim(),
+                text: textInput.value.trim(),
+                date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+            };
+            const storedComments = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            storedComments.push(newComment);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(storedComments));
+            nameInput.value = '';
+            textInput.value = '';
+            loadComments();
+        });
+
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
+        }
+        loadComments();
+    </script>
 
 </body>
 </html>
