@@ -138,6 +138,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         .card-img {
             height: 200px;
@@ -276,19 +277,15 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo">Tech<span>Pulse</span></div>
              </div>
     </header>
 
-    <!-- Main Content Area -->
     <div class="container">
         
-        <!-- Left Column: News Articles -->
         <main>
-            <!-- Top Featured Story -->
             <article class="featured-post">
                 <div class="featured-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80');"></div>
                 <div class="featured-content">
@@ -300,16 +297,12 @@
                 </div>
             </article>
 
-            
-            
-      
+            <div style="margin-bottom: 2rem;">
                 <a href="https://app.getcleva.com/refer/CHUK6191 " target="_blank" class="inline-btn"><img src="cleva.png" style="max-width:300px"></a>
             </div>
 
-            <!-- News Grid for Latest Posts -->
             <section class="news-grid">
                 
-                <!-- Card 1 -->
                 <article class="card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80');"></div>
                     <div class="card-content">
@@ -321,7 +314,6 @@
                     </div>
                 </article>
 
-                <!-- Card 2 -->
                 <article class="card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80');"></div>
                     <div class="card-content">
@@ -333,7 +325,6 @@
                     </div>
                 </article>
 
-                <!-- Card 3 -->
                 <article class="card">
                     <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80');"></div>
                     <div class="card-content">
@@ -345,10 +336,23 @@
                     </div>
                 </article>
 
+                <a href="apple.html" style="color: inherit;">
+                    <article class="card">
+                        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=400&q=80');"></div>
+                        <div class="card-content">
+                            <span class="category-tag" style="background: #ff3b30;">Legal</span>
+                            <h3>Apple Files Explosive Lawsuit Accusing OpenAI of Massive Trade Secret Theft</h3>
+                            <div class="meta-info">July 11, 2026</div>
+                            <p>Apple has filed a sweeping complaint alleging that OpenAI orchestrated a systematic corporate espionage pipeline to clone secret hardware designs.</p>
+                            <span style="color: #0073e6; font-weight: bold;">Read Detailed Story &rarr;</span>
+                        </div>
+                    </article>
+                </a>
+
             </section>
         </main>
+    </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 TechPulse. All Rights Reserved. Hosted via GitHub Pages.</p>
     </footer>

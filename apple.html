@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNews - Apple Sues OpenAI Over Hardware Trade Secrets</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --accent-color: #0071e3;
+            --bg-color: #f5f5f7;
+            --card-color: #ffffff;
+            --text-color: #1d1d1f;
+            --muted-text: #86868b;
+            --border-color: #e5e5e5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        /* Home Navigation Link */
+        .home-nav {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: transform 0.2s;
+        }
+
+        .home-nav:hover {
+            transform: translateX(-4px);
+        }
+
+        .home-nav svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 6px;
+            fill: currentColor;
+        }
+
+        /* Article Card Styles */
+        .article-card {
+            background: var(--card-color);
+            padding: 30px 24px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2rem;
+            line-height: 1.25;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .article-content p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: #333333;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 16px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #444;
+        }
+
+        .article-content h3 {
+            margin: 25px 0 12px 0;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        .article-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        /* Banner Ads Styles */
+        .ad-banner {
+            display: block;
+            text-decoration: none;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .ad-banner:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .cleva-banner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border: 1px solid #1e3c72;
+        }
+
+        .gotech-banner {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            border: 1px solid #11998e;
+        }
+
+        .ad-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 4px;
+            letter-spacing: 0.1em;
+        }
+
+        /* Comment Section Styles */
+        .comment-section {
+            background: var(--card-color);
+            padding: 30px 24px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .comment-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background-color: var(--bg-color);
+            outline: none;
+        }
+
+        .comment-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .comment-form input:focus, .comment-form textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        .comment-form button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            align-self: flex-start;
+            transition: opacity 0.2s;
+        }
+
+        .comment-form button:hover {
+            opacity: 0.9;
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .comment {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .comment-date {
+            color: var(--muted-text);
+        }
+
+        .comment-body {
+            font-size: 0.95rem;
+            color: #444444;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Arrow Home Navigation Link -->
+    <a href="https://chukwuchimeziebright4236-gif.github.io/" class="home-nav">
+        <svg viewBox="0 0 24 24">
+            <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+        </svg>
+        Back to Home
+    </a>
+
+    <!-- Main Article Card -->
+    <article class="article-card">
+        <div class="meta">Legal & Corporate Battleground • July 11, 2026</div>
+        <h1>Apple Sues OpenAI Over Trade Secret Theft 'at Every Level'</h1>
+        
+        <div class="article-content">
+            <p>In a massive legal escalation that marks the breakdown of a prominent Silicon Valley partnership, Apple has filed a 41-page federal lawsuit against ChatGPT creator OpenAI in the U.S. District Court for the Northern District of California.</p>
+            
+            <p>The suit alleges that OpenAI orchestrated a systematic and coordinated corporate campaign to extract Apple's most sensitive hardware designs, supply chain secrets, and manufacturing methodologies to jumpstart OpenAI's unreleased physical AI consumer devices.</p>
+
+            <blockquote>
+                "At every level, from members of its Technical Staff to its Chief Hardware Officer, and in coordination with business partners, OpenAI has been stealing Apple's trade secrets and confidential information." 
+                <br><small>— Apple Legal Complaint</small>
+            </blockquote>
+
+            <!-- Cleva Banner Ad Slot -->
+            <a href="https://app.getcleva.com/refer/CHUK6191" class="ad-banner cleva-banner" target="_blank">
+                <div class="ad-tag">Sponsored</div>
+                <div>Receive International Payments Easily—Get a Cleva USD Account Today!</div>
+            </a>
+
+            <h3>Two Insiders at the Heart of the Claims</h3>
+            <p>The filing heavily focuses on two former Apple employees who now work inside OpenAI's hardware program:</p>
+            <ul>
+                <li><strong>Tang Yew Tan:</strong> A 24-year Apple veteran and the former Vice President of Product Design for the iPhone and Apple Watch. He is currently OpenAI’s Chief Hardware Officer. Apple claims Tan actively used internal "Need to Know" security documents and project codenames during job interviews to probe Apple staff. He allegedly went as far as directing current Apple candidates to bring actual prototypes and CAD drawings to "show and tell" interview sessions.</li>
+                <li><strong>Chang Liu:</strong> A senior systems electrical engineer who spent eight years at Apple. Apple alleges that Liu kept a company-issued laptop after leaving for OpenAI in early 2026 and later exploited an authentication flaw to tap into Apple’s secure network storage. According to logs, Liu allegedly sent a message to a former coworker stating, <em>"LOL, I found out I can access the [network storage], so funny,"</em> before copying over 1,000 pages of advanced circuit board schematics.</li>
+            </ul>
+
+            <!-- GoTech Africa Banner Ad Slot -->
+            <a href="https://app.gotechafrica.com/go-invite?mref=7936" class="ad-banner gotech-banner" target="_blank">
+                <div class="ad-tag">Sponsored</div>
+                <div>Advance Your Tech Career with GoTech Africa — Join the Movement</div>
+            </a>
+
+            <h3>The Race for AI Hardware</h3>
+            <p>The sudden legal warfare comes at a critical time. In 2024, the companies announced a landmark deal to put ChatGPT inside Siri. However, behind the scenes, OpenAI has aggressively expanded into building physical AI electronics—bolstered by its multi-billion-dollar acquisition of <em>io Products</em>, a studio led by former Apple design icon Jony Ive.</p>
+            <p>Apple contends that OpenAI sought illegal shortcuts to secure a new consumer hardware revenue stream ahead of its highly anticipated Wall Street IPO valuation goals. Apple is currently seeking a permanent injunction to prevent OpenAI from using any of the data, alongside unspecified punitive damages.</p>
+        </div>
+    </article>
+
+    <!-- Comment Section -->
+    <section class="comment-section">
+        <h2>Discussion (3)</h2>
+        
+        <!-- Comment Input Form Container -->
+        <form class="comment-form" onsubmit="event.preventDefault();">
+            <input type="text" placeholder="Your Name" required>
+            <textarea placeholder="Join the discussion... Share your thoughts!" required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+
+        <!-- Static Comments List -->
+        <div class="comment-list">
+            <div class="comment">
+                <div class="comment-header">
+                    <span class="comment-author">Chidi_Dev</span>
+                    <span class="comment-date">2 hours ago</span>
+                </div>
+                <div class="comment-body">
+                    The "LOL so funny" message is an absolute legal nightmare for OpenAI. You can't defend that in front of a jury. 
+                </div>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-header">
+                    <span class="comment-author">Amara_Tech</span>
+                    <span class="comment-date">4 hours ago</span>
+                </div>
+                <div class="comment-body">
+                    Wow, so much for the Apple Intelligence partnership. It's crazy to see how fast things fall apart when companies compete for the exact same ecosystem.
+                </div>
+            </div>
+
+            <div class="comment">
+                <div class="comment-header">
+                    <span class="comment-author">TechBro99</span>
+                    <span class="comment-date">Yesterday</span>
+                </div>
+                <div class="comment-body">
+                    If they actually brought physical prototypes and CAD designs to job interviews, that’s plain corporate espionage. This trial is going to be wild.
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
