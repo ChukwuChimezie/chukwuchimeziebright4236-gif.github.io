@@ -5,10 +5,8 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FC0P9XK86"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechPulse | Latest Tech News & Blogs</title>
+    <title>Nvidia Stock Surges Amid Valuation Moat & Capex Boom | TechPulse</title>
     <style>
-    a{ text-decoration: none;
-    }
         /* Reset & Base Styles */
         * {
             margin: 0;
@@ -56,17 +54,17 @@
         .logo span {
             color: #fff;
         }
-        .nav-links {
+        .back-home {
             display: flex;
-            gap: 1.5rem;
-        }
-        .nav-links a {
-            color: #ccc;
+            align-items: center;
+            gap: 0.5rem;
+            color: #cbd5e1;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.3s;
         }
-        .nav-links a:hover {
-            color: #fff;
+        .back-home:hover {
+            color: #38bdf8;
         }
 
         /* Main Layout Container */
@@ -85,86 +83,246 @@
             }
         }
 
-        /* Hero / Featured Post */
-        .featured-post {
+        /* Article Wrapper */
+        .article-card {
             background: #fff;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 2rem;
             margin-bottom: 2rem;
-        }
-        .featured-img {
-            width: 100%;
-            height: 400px;
-            background: #ddd center/cover no-repeat;
-        }
-        .featured-content {
-            padding: 1.5rem;
         }
         .category-tag {
             display: inline-block;
-            background: #0073e6;
+            background: #28a745;
             color: #fff;
             padding: 0.2rem 0.6rem;
             font-size: 0.8rem;
             border-radius: 4px;
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
-        .featured-content h2 {
-            font-size: 2rem;
+        .article-card h1 {
+            font-size: 2.2rem;
+            line-height: 1.25;
             margin-bottom: 1rem;
             color: #111;
         }
         .meta-info {
             font-size: 0.85rem;
             color: #777;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.75rem;
         }
-
-        /* News Grid */
-        .news-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+        .stock-ticker-box {
+            background: linear-gradient(135deg, #064e3b, #111827);
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
         }
-        @media (min-width: 600px) {
-            .news-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+        .ticker-price {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: monospace;
         }
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .card-img {
-            height: 200px;
-            background: #eee center/cover no-repeat;
-        }
-        .card-content {
-            padding: 1.2rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-        .card-content h3 {
+        .ticker-change {
+            color: #34d399;
             font-size: 1.2rem;
-            margin: 0.5rem 0;
+            margin-left: 0.5rem;
+        }
+        .article-body p {
+            margin-bottom: 1.2rem;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .article-body h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.5rem;
             color: #111;
         }
-        .card-content p {
+
+        /* Mid-Article Centered Premium Deriv Banner */
+        .deriv-mid-banner {
+            background: linear-gradient(135deg, #ff444f 0%, #101216 100%);
+            color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin: 2.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .deriv-tag {
+            background: rgba(255,255,255,0.2);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+        }
+        .deriv-mid-banner h4 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+        .deriv-mid-banner p {
             font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 1rem;
-            flex-grow: 1;
+            color: #e2e8f0;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        .deriv-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0 auto 1.5rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+        .deriv-features li {
+            display: flex;
+            align-items: center;
+        }
+        .deriv-features span {
+            color: #ff444f;
+            font-weight: bold;
+            margin-right: 0.4rem;
+            background: #fff;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+        .deriv-btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #101216;
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+            font-size: 1.05rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        .deriv-btn:hover {
+            background: #f1f5f9;
+            color: #ff444f;
+            transform: scale(1.02);
+        }
+        .risk-warning {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 1.2rem;
+            line-height: 1.3;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Sidebar */
+        /* Comments Section Styling */
+        .comments-section {
+            margin-top: 3rem;
+            border-top: 2px solid #eee;
+            padding-top: 2rem;
+        }
+        .comments-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .comment-count {
+            background: #e2e8f0;
+            color: #475569;
+            font-size: 0.85rem;
+            padding: 0.1rem 0.5rem;
+            border-radius: 20px;
+        }
+        .comment-form {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.3rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #0073e6;
+        }
+        .submit-comment-btn {
+            background: #111;
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .submit-comment-btn:hover {
+            background: #333;
+        }
+        .comment-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 0.4rem;
+        }
+        .comment-time {
+            color: #94a3b8;
+            font-weight: normal;
+        }
+        .comment-text {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        /* Sidebar Sidebar Info Cards */
         aside {
             display: flex;
             flex-direction: column;
@@ -180,90 +338,12 @@
             border-bottom: 2px solid #0073e6;
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
-        .trending-list li {
-            margin-bottom: 1rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-        .trending-list li:last-child {
-            border: none;
-        }
-        .trending-list a {
-            font-weight: 500;
-            color: #222;
-        }
-        .trending-list a:hover {
-            color: #0073e6;
-        }
-
-        /* Refer & Earn Custom Banner Styling */
-        .referral-banner {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            color: #fff;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border: 1px solid #334155;
-        }
-        .referral-banner h4 {
-            color: #38bdf8;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        .referral-banner p {
+        .market-tip-text {
             font-size: 0.9rem;
-            color: #cbd5e1;
-            margin-bottom: 1.2rem;
-        }
-        .referral-btn {
-            display: inline-block;
-            background: #38bdf8;
-            color: #0f172a;
-            padding: 0.6rem 1.2rem;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .referral-btn:hover {
-            background: #0ea5e9;
-            color: #fff;
-        }
-
-        /* Inline Horizontal Referral Banner */
-        .inline-referral {
-            background: #ffffff;
-            border-left: 5px solid #10b981;
-            padding: 1.2rem;
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: flex-start;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-      
-        .inline-referral-text h4 {
-            color: #10b981;
-            margin-bottom: 0.2rem;
-        }
-        .inline-referral-text p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        .inline-btn {
-            background: #10b981;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-        .inline-btn:hover {
-            background: #059669;
-            color: #fff;
+            color: #555;
+            line-height: 1.5;
         }
 
         /* Footer */
@@ -282,82 +362,166 @@
     <header>
         <div class="nav-container">
             <div class="logo">Tech<span>Pulse</span></div>
-             </div>
+            <!-- Back Arrow link pointing to home study page -->
+            <a href="https://chukwuchimezie.github.io/chukwuchimeziebright4236-gif.github.io/" class="back-home">
+                &larr; Back to Home Study
+            </a>
+        </div>
     </header>
 
     <div class="container">
         
+        <!-- Main News Area -->
         <main>
-            <article class="featured-post">
-                <div class="featured-img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="featured-content">
-                    <span class="category-tag"> <a href="trade.html">
-                    <h2> Latest Facebook (Meta) Trade News & Market Analysi</a> </h2>
-                    <div class="meta-info">Published on July 12, 2026 • By Admin</div>
-                    <p><a href="trade.html"> Meta (META) Stock Roars Back with 14.8% Weekly Surge Following Custom Silicon and AI Advancement... </a> </p>
-                    <a href="trade.html" style="font-weight: bold; display: inline-block; margin-top: 1rem;">Read Full Story &rarr;</a>
+            <article class="article-card">
+                <span class="category-tag">Markets</span>
+                <h1>Nvidia Stock Breaks Out to $207.50 as Seven-Year Valuation Low Signals Major Buy Zone</h1>
+                <div class="meta-info">Published on July 13, 2026 • By TechPulse Market Desk</div>
+
+                <!-- Stock Info Panel -->
+                <div class="stock-ticker-box">
+                    <div style="font-size: 0.85rem; text-transform: uppercase; color: #94a3b8; margin-bottom: 0.2rem;">NASDAQ: NVDA (Live Intraday)</div>
+                    <div>
+                        <span class="ticker-price">$207.50</span>
+                        <span class="ticker-change">+2.31% (+$4.72)</span>
+                    </div>
                 </div>
-            </article>
 
-            <div style="margin-bottom: 2rem;">
-                <a href="https://app.getcleva.com/refer/CHUK6191 " target="_blank" class="inline-btn"><img src="cleva.png" style="max-width:300px"></a>
-            </div>
+                <!-- First Half of Article Body -->
+                <div class="article-body">
+                    <p><strong>Nvidia (NVDA)</strong> shares broke clear of morning market volatility today, bouncing upward by over 2.3% to securely cross the $207.50 threshold. The rapid movement materializes as institutional asset managers react to historically low market valuation structures overlapping an unyielding AI hardware buildout.</p>
+                    
+                    <p>Market analysts are pointing out an unprecedented structural anomaly in Nvidia's current numbers. While the stock has tracked within standard consolidation ranges over the first half of 2026, exploding hyperscaler revenue pipelines have actively compressed its forward P/E multiple down to its lowest level in nearly seven years.</p>
+                </div>
 
-            <section class="news-grid">
-                
-                <article class="card">
-                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80');"></div>
-                    <div class="card-content">
-                        <span class="category-tag" style="background: #28a745;">Web Dev</span>
-                        <h3>Mastering CSS Grid and Flexbox for Layouts</h3>
-                        <div class="meta-info">July 9, 2026</div>
-                        <p>Building clean, responsive grid systems doesn't require massive frameworks. Learn how to leverage raw CSS properties efficiently.</p>
-                        <a href="optimize.html">Read More &rarr;</a>
+                <!-- CENTERED HIGH-CONVERSION ADVERTISEMENT BANNER -->
+                <div class="deriv-mid-banner">
+                    <span class="deriv-tag">Market Opportunity</span>
+                    <h4>Don't Just Read the News. Trade It.</h4>
+                    <p>Capitalize on volatile tech trends and mega-cap equity shifts. Trade Nvidia, indices, and global assets instantly with the world's premier digital broker.</p>
+                    
+                    <ul class="deriv-features">
+                        <li><span>✓</span> Tight spreads on global tech assets</li>
+                        <li><span>✓</span> Ultra-fast order execution systems</li>
+                        <li><span>✓</span> 25+ years of trusted reliability</li>
+                    </ul>
+
+                    <a href="https://partner-tracking.deriv.com/click?a=44867&o=1&c=3&link_id=1" target="_blank" rel="noopener noreferrer" class="deriv-btn">
+                        Start Trading on Deriv Now
+                    </a>
+                    
+                    <div class="risk-warning">
+                        <strong>Risk Warning:</strong> Trading financial derivative instruments carries a high level of capital risk. Always evaluate your risk parameters.
                     </div>
-                </article>
+                </div>
 
-                <article class="card">
-                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80');"></div>
-                    <div class="card-content">
-                        <span class="category-tag" style="background: #dc3545;">Cybersecurity</span>
-                        <h3>Why Staying Secure Matters for Small Blogs</h3>
-                        <div class="meta-info">July 8, 2026</div>
-                        <p>From simple SSL setups to basic database configuration protection, learn how to secure your custom web projects easily.</p>
-                        <a href="cross.html">Read More &rarr;</a>
-                    </div>
-                </article>
+                <!-- Second Half of Article Body -->
+                <div class="article-body">
+                    <h3>Hyperscale Infrastructure Spending Defies Skeptics</h3>
+                    <p>Recent valuation metrics from Goldman Sachs highlight that the AI computing giant is trading at a forward P/E ratio near 21.7x, drawing it practically even with the baseline S&P 500 multi-average. This represents an aggressive discount from its historical peak expansion eras.</p>
 
-                <article class="card">
-                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80');"></div>
-                    <div class="card-content">
-                        <span class="category-tag" style="background: #ffc107; color: #333;">Gadgets</span>
-                        <h3>Top Tech Tools Every Developer Needs in 2026</h3>
-                        <div class="meta-info">July 7, 2026</div>
-                        <p>A round-up of the best hardware accessories, setups, and productivity extensions turning heads this quarter.</p>
-                        <a href="logs.html">Read More &rarr;</a>
-                    </div>
-                </article>
+                    <p>Fears of systemic slowdown evaporated completely following confirmations that production channels remain locked on schedule for upcoming data architecture platforms. Major cloud companies have simultaneously validated these demand parameters, with corporations like Meta initiating massive asset debt offerings explicitly optimized for physical data center infrastructure buildouts.</p>
+                </div>
 
-                <a href="apple.html" style="color: inherit;">
-                    <article class="card">
-                        <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=400&q=80');"></div>
-                        <div class="card-content">
-                            <span class="category-tag" style="background: #ff3b30;">Legal</span>
-                            <h3>Apple Files Explosive Lawsuit Accusing OpenAI of Massive Trade Secret Theft</h3>
-                            <div class="meta-info">July 11, 2026</div>
-                            <p>Apple has filed a sweeping complaint alleging that OpenAI orchestrated a systematic corporate espionage pipeline to clone secret hardware designs.</p>
-                            <span style="color: #0073e6; font-weight: bold;">Read Detailed Story &rarr;</span>
+                <!-- Interactive Comments Section -->
+                <section class="comments-section">
+                    <h3>Discussion Corner <span id="comment-count" class="comment-count">2</span></h3>
+                    
+                    <form id="comment-form" class="comment-form">
+                        <div class="form-group">
+                            <label for="username">Your Name</label>
+                            <input type="text" id="username" placeholder="e.g., Trader_Joe" required>
                         </div>
-                    </article>
-                </a>
+                        <div class="form-group">
+                            <label for="comment-text">Comment</label>
+                            <textarea id="comment-text" rows="3" placeholder="What are your thoughts on Nvidia's current position?" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-comment-btn">Post Comment</button>
+                    </form>
 
-            </section>
+                    <div id="comments-list">
+                        <div class="comment-card">
+                            <div class="comment-header">
+                                <span>David K.</span>
+                                <span class="comment-time">2 hours ago</span>
+                            </div>
+                            <div class="comment-text">Getting NVDA at a 7-year valuation low while their datacenter moat is completely intact feels like a massive market gift. Picked up more shares at the open.</div>
+                        </div>
+                        <div class="comment-card">
+                            <div class="comment-header">
+                                <span>Sarah_Trade</span>
+                                <span class="comment-time">4 hours ago</span>
+                            </div>
+                            <div class="comment-text">Everyone was panicking about macro trends over the weekend, but structural demand for processing hardware doesn't just evaporate overnight. Good breakout.</div>
+                        </div>
+                    </div>
+                </section>
+            </article>
         </main>
+
+        <!-- Sidebar Area -->
+        <aside>
+            <div class="widget">
+                <h3>Market Analysis</h3>
+                <p class="market-tip-text">Tech sector volatility often triggers sudden price breakouts. Institutional traders monitor 7-year support structures and P/E ratios to time entry points before major earnings cycles call out fresh margins.</p>
+            </div>
+            
+            <!-- Ad slot placeholder in case you decide to add other snippet scripts later -->
+            <div style="margin-bottom: 2rem; display: flex; justify-content: center;">
+                <a href="https://app.getcleva.com/refer/CHUK6191" target="_blank" class="inline-btn">
+                    <img src="cleva.png" alt="Cleva Promo" style="max-width:100%; height:auto; border-radius:6px;">
+                </a>
+            </div>
+        </aside>
+
     </div>
 
     <footer>
         <p>&copy; 2026 TechPulse. All Rights Reserved. Hosted via GitHub Pages.</p>
     </footer>
 
+    <!-- Comments Engine Script -->
+    <script>
+        document.getElementById('comment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const usernameInput = document.getElementById('username');
+            const commentTextInput = document.getElementById('comment-text');
+            const commentsList = document.getElementById('comments-list');
+            const countBadge = document.getElementById('comment-count');
+            
+            // Build safe comment layout
+            const newComment = document.createElement('div');
+            newComment.className = 'comment-card';
+            newComment.innerHTML = `
+                <div class="comment-header">
+                    <span>${escapeHtml(usernameInput.value)}</span>
+                    <span class="comment-time" style="color: #28a745; font-weight: bold;">Just now</span>
+                </div>
+                <div class="comment-text">${escapeHtml(commentTextInput.value)}</div>
+            `;
+            
+            // Insert comment at top of feed
+            commentsList.insertBefore(newComment, commentsList.firstChild);
+            
+            // Increment display count
+            let currentCount = parseInt(countBadge.textContent);
+            countBadge.textContent = currentCount + 1;
+            
+            // Reset input values
+            usernameInput.value = '';
+            commentTextInput.value = '';
+        });
+
+        // Basic XSS defense utility
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
 </body>
 </html>
